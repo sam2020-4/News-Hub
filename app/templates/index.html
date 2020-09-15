@@ -10,6 +10,17 @@
 <!-- block content -->
 {% block content %}
 <div class="container">
+    <div class="row">
+        <h3>Select your favourite News Source here!!!</h3>
+        <ul>
+            {% for source in sources %}
+            <a href="/artcle/{{source.id}}">
+            <p>{{source.id}}</p>
+            </a>
+            {% endfor %}
+        </ul>
+    </div>
 
+    
 </div>
 {% endblock %}
