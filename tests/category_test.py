@@ -19,6 +19,3 @@ class CategoryTest(unittest.TestCase):
 
     def test_instance(self):
         self.assertTrue(isinstance(self.new_category, Category))
-
-# if __name__ == '__main__':
-#     unittest.main()

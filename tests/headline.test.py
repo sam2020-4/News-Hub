@@ -20,4 +20,6 @@ class headlinesTest(unittest.TestCase):
 
         def test_instance(self):
             '''
-            
+            Test to check creation of the new headline instance
+            '''
+            self.assertTrue(isinstance(self.new_headlines, headlines))
