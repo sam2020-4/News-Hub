@@ -18,4 +18,5 @@ class CategoryTest(unittest.TestCase):
                             "2020-09-15T15:09:36Z")
 
     def test_instance(self):
+        
         self.assertTrue(isinstance(self.new_category, Category))
