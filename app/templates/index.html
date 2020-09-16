@@ -9,18 +9,29 @@
 
 <!-- block content -->
 {% block content %}
-<div class="container">
-    <div class="row">
-        <h3>Select your favourite News Source here!!!</h3>
-        <ul>
-            {% for source in sources %}
-            <a href="/artcle/{{source.id}}">
-            <p>{{source.id}}</p>
-            </a>
+<div class="homepage">
+    <div class="container-fluid">
+        <h2>LATEST NEWS</h2>
+        <h1 class="text-capitalize text-center"> {{id}} </h3>
+        <div class="container-fluid">
+            <div class="row">
+            {% for headlines in headlines %}
+                <div class="col-md-4">
+                <div class="thumbnail">
+                    <a>
+                    <img src="{{headlines.urlToImage}}" class="img-responsive" styles="height:20px">
+                    </a>
+                    <div class="details">
+                    <h4>{{headlines.author}}</h4>
+                        <h4>{{headlines.description | truncate(100)}}</h4>
+                        <a href="{{headlines.url}}" target="_blank"> view more details</a>
+                        <p>Publish Date:{{headlines.publishedAt}}</p>
+                    </div>                   
+                </div>
+                </div>
             {% endfor %}
-        </ul>
+            </div>
+        </div> 
     </div>
-
-    
 </div>
 {% endblock %}

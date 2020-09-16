@@ -58,7 +58,7 @@ def article_source(id):
         article_source_results = None
 
         if article_source_response['articles']:
-            article_source_list = article_source_response['artcles']
+            article_source_list = article_source_response['articles']
             article_source_results = process_articles_results(article_source_list)
 
     return article_source_results
@@ -79,7 +79,7 @@ def process_articles_results(news):
 
         if url:
             article_objects = Article(author,title, description, url,urlToImage,publishedAt)
-            article_source_results.append(article.objects)
+            article_source_results.append(article_objects)
 
     return article_source_results
 
@@ -102,7 +102,7 @@ def get_category(catg_name):
 
 # method that gets the response to the category json
 def get_headlines():
-    get_headlines_url ='https://newsapi.org/v2/top-headlines?country=us&apiKey={}'.format(api_key)
+    get_headlines_url ='https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey={}'.format(api_key)
     print(get_headlines_url)
 
     with urllib.request.urlopen(get_headlines_url) as url:

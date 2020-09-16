@@ -8,10 +8,10 @@ def index():
     method which returns the index page
     '''
     # geting news categories
-    source = get_source()
+    source= get_source()
     headlines = get_headlines()
 
-    return render_template('index.html', sources = source, headlines = headlines)
+    return render_template('index.html', sources=source, headlines = headlines)
 
 @main.route('/article/<id>')
 def article(id):
@@ -31,4 +31,4 @@ def category(catg_name):
     title = f'{catg_name}'
     catg = catg_name
     
-    return render_template('categories.html', title = title, category = category, catg = catg_name)
+    return render_template('categories.html', title = title, category = category, catg=catg_name)
